@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langdock Partner Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F4F4F5;
+            --white: #FFFFFF;
+            --text: #1A1C21;
+            --text-secondary: rgba(26,28,33,0.55);
+            --radius: 12px;
+            --radius-pill: 100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 48px;
+        }
+
+        @media (max-width: 768px) {
+            .page { padding: 64px 24px; }
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 48px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 355px;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--text);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: var(--radius-pill);
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 48px;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 900px) {
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+        }
+
+        /* Cards Stack */
+        .cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 42px;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.15s;
+        }
+
+        .card:hover {
+            background: #ECECED;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        .card-arrow {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .card-arrow svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--text);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .card-label {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #D8D5CB;
+            border-radius: var(--radius);
+            padding: 131px 48px;
+        }
+
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-inner {
+                grid-template-columns: 1fr;
+            }
+            .contact-section {
+                padding: 64px 32px;
+            }
+        }
+
+        .contact-title {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .contact-subtitle {
+            font-size: 16px;
+            color: rgba(0,0,0,0.55);
+        }
+
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 42px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .contact-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .contact-card-name {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .contact-card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 100%;
+            max-width: 800px;
+            border-radius: var(--radius);
+            margin: 0 auto 32px;
+            display: block;
+            background: #E8E8E8;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .team-text {
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 120px;
+            padding-top: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 48px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-logo svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 42px;
+        }
+
+        .footer-links a {
+            font-size: 16px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Langdock Partner Hub</h1>
+        </header>
+
+        <!-- Resources -->
+        <section class="two-col">
+            <h2 class="section-title">Resources</h2>
+            <div class="cards-stack">
+                <a href="#" class="card">
+                    <span class="card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+                    <div class="card-label">Sales Deck</div>
+                    <div class="card-desc">Presentation for pitching Langdock to customers</div>
+                </a>
+                <a href="#" class="card">
+                    <span class="card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+                    <div class="card-label">Logos</div>
+                    <div class="card-desc">Langdock brand assets and logo files</div>
+                </a>
+                <a href="#" class="card">
+                    <span class="card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+                    <div class="card-label">Product Screenshots</div>
+                    <div class="card-desc">High-resolution product images</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="two-col">
+            <h2 class="section-title">Links</h2>
+            <div class="cards-stack">
+                <a href="https://docs.langdock.com" target="_blank" class="card">
+                    <span class="card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+                    <div class="card-label">Documentation</div>
+                    <div class="card-desc">Complete product guides and API reference</div>
+                </a>
+                <a href="https://trust.langdock.com" target="_blank" class="card">
+                    <span class="card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+                    <div class="card-label">Trust Center</div>
+                    <div class="card-desc">Security, compliance, and certifications</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Customer Stories -->
+        <section class="two-col">
+            <h2 class="section-title">Customer Stories</h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/fv09zhnZPgU"
+                    title="Customer Story"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-inner">
+                <div>
+                    <h2 class="contact-title">Your Contact</h2>
+                    <p class="contact-subtitle">Reach out anytime for support with deals, demos, or questions.</p>
+                </div>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <img src="images/Elmar-Schaaf.jpg" alt="Elmar Schaaf" class="contact-photo">
+                        <div>
+                            <div class="contact-card-name">Elmar Schaaf</div>
+                            <div class="contact-card-desc">Partnerships Lead<br>elmar@langdock.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="team-section">
+            <img src="images/team.jpg" alt="Langdock Team" class="team-photo">
+            <p class="team-text">We're looking forward to growing together!</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="https://langdock.com" class="footer-logo">Langdock</a>
+            <div class="footer-links">
+                <a href="https://langdock.com">langdock.com</a>
+                <a href="https://docs.langdock.com">Docs</a>
+                <a href="https://trust.langdock.com">Trust Center</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
