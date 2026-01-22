@@ -97,6 +97,18 @@
             letter-spacing: -0.3px;
         }
 
+        .see-all-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--text);
+            text-decoration: underline;
+        }
+
+        .see-all-link:hover {
+            opacity: 0.7;
+        }
+
         /* Cards Stack */
         .cards-stack {
             display: flex;
@@ -352,7 +364,10 @@
 
         <!-- Customer Stories -->
         <section class="two-col">
-            <h2 class="section-title">Customer Stories</h2>
+            <div>
+                <h2 class="section-title">Customer Stories</h2>
+                <a href="https://youtube.com/playlist?list=PLs7v9J31VwTLGw0bQAZ5AycdahM36AQ4n" target="_blank" class="see-all-link">See all customer stories</a>
+            </div>
             <div class="video-container">
                 <iframe
                     src="https://www.youtube-nocookie.com/embed/videoseries?list=PLs7v9J31VwTLGw0bQAZ5AycdahM36AQ4n"
