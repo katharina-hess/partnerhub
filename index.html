@@ -101,7 +101,7 @@
             display: inline-block;
             margin-top: 8px;
             font-size: 14px;
-            color: var(--text);
+            color: var(--text-secondary);
             text-decoration: underline;
         }
 
@@ -183,51 +183,18 @@
         .contact-section {
             background: #D8D5CB;
             border-radius: var(--radius);
-            padding: 131px 48px;
-        }
-
-        .contact-inner {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 48px;
-        }
-
-        @media (max-width: 900px) {
-            .contact-inner {
-                grid-template-columns: 1fr;
-            }
-            .contact-section {
-                padding: 64px 32px;
-            }
-        }
-
-        .contact-title {
-            font-size: 28px;
-            font-weight: 400;
-            margin-bottom: 8px;
-        }
-
-        .contact-subtitle {
-            font-size: 16px;
-            color: rgba(0,0,0,0.55);
-        }
-
-        .contact-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 42px;
-        }
-
-        .contact-card {
+            padding: 48px;
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 42px 32px;
+            }
         }
 
         .contact-photo {
@@ -238,16 +205,29 @@
             flex-shrink: 0;
         }
 
-        .contact-card-name {
-            font-size: 16px;
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-title {
+            font-size: 20px;
             font-weight: 500;
             margin-bottom: 4px;
         }
 
-        .contact-card-desc {
+        .contact-desc {
             font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
+            color: rgba(0,0,0,0.55);
+        }
+
+        .contact-email {
+            font-size: 14px;
+            color: var(--text);
+            text-decoration: underline;
+        }
+
+        .contact-email:hover {
+            opacity: 0.7;
         }
 
         /* Team Section */
@@ -382,21 +362,12 @@
 
         <!-- Contact Section -->
         <section class="contact-section">
-            <div class="contact-inner">
-                <div>
-                    <h2 class="contact-title">Your Contact</h2>
-                    <p class="contact-subtitle">Reach out anytime for support with deals, demos, or questions.</p>
-                </div>
-                <div class="contact-cards">
-                    <div class="contact-card">
-                        <img src="images/Elmar-Schaaf.jpg" alt="Elmar Schaaf" class="contact-photo">
-                        <div>
-                            <div class="contact-card-name">Elmar Schaaf</div>
-                            <div class="contact-card-desc">Partnerships Lead<br>elmar@langdock.com</div>
-                        </div>
-                    </div>
-                </div>
+            <img src="images/Elmar-Schaaf.jpg" alt="Elmar Schaaf" class="contact-photo">
+            <div class="contact-info">
+                <div class="contact-title">Elmar Schaaf</div>
+                <div class="contact-desc">Partnerships Lead - Reach out anytime for support with deals, demos, or questions.</div>
             </div>
+            <a href="mailto:elmar@langdock.com" class="contact-email">elmar@langdock.com</a>
         </section>
 
         <!-- Team -->
