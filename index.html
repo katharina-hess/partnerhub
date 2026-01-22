@@ -181,6 +181,9 @@
 
         /* Contact Section */
         .contact-content {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 42px;
             display: flex;
             gap: 32px;
             align-items: flex-start;
@@ -247,20 +250,21 @@
             text-align: center;
         }
 
+        .team-text {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
         .team-photo {
             width: 100%;
             max-width: 800px;
             border-radius: var(--radius);
-            margin: 0 auto 32px;
+            margin: 0 auto;
             display: block;
             background: #E8E8E8;
             aspect-ratio: 16/9;
             object-fit: cover;
-        }
-
-        .team-text {
-            font-size: 28px;
-            font-weight: 400;
         }
 
         /* Footer */
@@ -387,8 +391,8 @@
 
         <!-- Team -->
         <section class="team-section">
-            <img src="images/team.jpg" alt="Langdock Team" class="team-photo">
             <p class="team-text">We're looking forward to growing together!</p>
+            <img src="images/team.jpg" alt="Langdock Team" class="team-photo">
         </section>
 
         <!-- Footer -->
