@@ -180,26 +180,23 @@
         }
 
         /* Contact Section */
-        .contact-section {
-            background: #D8D5CB;
-            border-radius: var(--radius);
-            padding: 64px;
+        .contact-content {
             display: flex;
-            gap: 48px;
+            gap: 32px;
             align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .contact-section {
+        @media (max-width: 900px) {
+            .contact-content {
                 flex-direction: column;
-                text-align: center;
-                padding: 48px 32px;
+                align-items: flex-start;
             }
         }
 
         .contact-photo {
-            width: 180px;
-            height: 180px;
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 1;
             border-radius: var(--radius);
             object-fit: cover;
             flex-shrink: 0;
@@ -209,25 +206,25 @@
             flex: 1;
         }
 
-        .contact-label {
-            font-size: 14px;
-            color: rgba(0,0,0,0.55);
-            margin-bottom: 8px;
-        }
-
         .contact-name {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 400;
             margin-bottom: 4px;
         }
 
         .contact-role {
             font-size: 16px;
-            color: rgba(0,0,0,0.55);
-            margin-bottom: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
         }
 
-        .contact-email {
+        .contact-email-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -240,7 +237,7 @@
             transition: opacity 0.15s;
         }
 
-        .contact-email:hover {
+        .contact-btn:hover {
             opacity: 0.85;
         }
 
@@ -375,13 +372,16 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="contact-section">
-            <img src="images/Elmar-Schaaf.jpg" alt="Elmar Schaaf" class="contact-photo">
-            <div class="contact-info">
-                <div class="contact-label">Your Contact</div>
-                <div class="contact-name">Elmar Schaaf</div>
-                <div class="contact-role">Partnerships Lead</div>
-                <a href="mailto:elmar@langdock.com" class="contact-email">Get in touch</a>
+        <section class="two-col">
+            <h2 class="section-title">Your Contact</h2>
+            <div class="contact-content">
+                <img src="images/Elmar-Schaaf.jpg" alt="Elmar Schaaf" class="contact-photo">
+                <div class="contact-info">
+                    <div class="contact-name">Elmar Schaaf</div>
+                    <div class="contact-role">Partnerships Lead</div>
+                    <div class="contact-email-text">elmar@langdock.com</div>
+                    <a href="mailto:elmar@langdock.com" class="contact-btn">Get in touch</a>
+                </div>
             </div>
         </section>
 
