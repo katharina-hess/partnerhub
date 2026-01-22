@@ -183,24 +183,24 @@
         .contact-section {
             background: #D8D5CB;
             border-radius: var(--radius);
-            padding: 48px;
+            padding: 64px;
             display: flex;
+            gap: 48px;
             align-items: center;
-            gap: 32px;
         }
 
         @media (max-width: 768px) {
             .contact-section {
                 flex-direction: column;
                 text-align: center;
-                padding: 42px 32px;
+                padding: 48px 32px;
             }
         }
 
         .contact-photo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: var(--radius);
             object-fit: cover;
             flex-shrink: 0;
         }
@@ -209,25 +209,39 @@
             flex: 1;
         }
 
-        .contact-title {
-            font-size: 20px;
-            font-weight: 500;
+        .contact-label {
+            font-size: 14px;
+            color: rgba(0,0,0,0.55);
+            margin-bottom: 8px;
+        }
+
+        .contact-name {
+            font-size: 28px;
+            font-weight: 400;
             margin-bottom: 4px;
         }
 
-        .contact-desc {
-            font-size: 14px;
+        .contact-role {
+            font-size: 16px;
             color: rgba(0,0,0,0.55);
+            margin-bottom: 16px;
         }
 
         .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--text);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: var(--radius-pill);
             font-size: 14px;
-            color: var(--text);
-            text-decoration: underline;
+            text-decoration: none;
+            transition: opacity 0.15s;
         }
 
         .contact-email:hover {
-            opacity: 0.7;
+            opacity: 0.85;
         }
 
         /* Team Section */
@@ -364,10 +378,11 @@
         <section class="contact-section">
             <img src="images/Elmar-Schaaf.jpg" alt="Elmar Schaaf" class="contact-photo">
             <div class="contact-info">
-                <div class="contact-title">Elmar Schaaf</div>
-                <div class="contact-desc">Partnerships Lead - Reach out anytime for support with deals, demos, or questions.</div>
+                <div class="contact-label">Your Contact</div>
+                <div class="contact-name">Elmar Schaaf</div>
+                <div class="contact-role">Partnerships Lead</div>
+                <a href="mailto:elmar@langdock.com" class="contact-email">Get in touch</a>
             </div>
-            <a href="mailto:elmar@langdock.com" class="contact-email">elmar@langdock.com</a>
         </section>
 
         <!-- Team -->
